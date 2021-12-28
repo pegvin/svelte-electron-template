@@ -1,0 +1,43 @@
+{
+	"name": "svelte-electron-app",
+	"productName": "svelte-electron-app",
+	"version": "1.0.0",
+	"description": "My Electron application description",
+	"license": "MIT",
+	"main": "./electron/index.js",
+	"scripts": {
+		"start": "concurrently \"npm:svelte\" \"npm:forge\"",
+		"forge": "electron-forge start",
+		"forge-package": "npm run svelte-build && electron-forge package",
+		"forge-make": "npm run svelte-build && electron-forge make",
+		"forge-publish": "npm run svelte-build && electron-forge publish",
+		"svelte": "parcel watch public/index.html --public-url ./",
+		"svelte-build": "parcel build public/index.html --public-url ./"
+	},
+
+	"config": {
+		"forge": "./forge.config.js"
+	},
+
+	"browserslist": [
+		"last 1 chrome versions"
+	],
+
+	"dependencies": {
+		"electron-reloader": "^1.2.1",
+		"electron-squirrel-startup": "^1.0.0"
+	},
+	"devDependencies": {
+		"@electron-forge/cli": "^6.0.0-beta.61",
+		"@electron-forge/maker-deb": "^6.0.0-beta.61",
+		"@electron-forge/maker-rpm": "^6.0.0-beta.61",
+		"@electron-forge/maker-squirrel": "^6.0.0-beta.61",
+		"@electron-forge/maker-zip": "^6.0.0-beta.61",
+		"concurrently": "^6.5.1",
+		"electron": "16.0.5",
+		"parcel-bundler": "^1.12.5",
+		"parcel-plugin-svelte": "^4.0.9",
+		"sirv-cli": "^1.0.0",
+		"svelte": "^3.0.0"
+	}
+}
