@@ -2,7 +2,7 @@
 	"name": "svelte-electron-app",
 	"productName": "svelte-electron-app",
 	"version": "1.0.0",
-	"description": "My Electron application description",
+	"description": "Electron App with Svelte 3 Framework and Parcel Bundler",
 	"license": "MIT",
 	"main": "./electron/index.js",
 	"scripts": {
